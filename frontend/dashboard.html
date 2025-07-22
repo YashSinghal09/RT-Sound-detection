@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sound Level Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  <nav class="dashboard-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <div>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="livechart.html" class="nav-link">Live Chart</a>
+      <a href="graph.html" class="nav-link">Graph</a>
+    </div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
+  <h1>📊 Sound Level Dashboard</h1>
+  <div class="dashboard-controls" style="margin-bottom: 1.5rem; text-align: center;">
+    <label for="thresholdInput" style="font-weight: 600; color: #0077b6;">Noise Threshold:</label>
+    <input type="range" id="thresholdInput" min="0" max="100" value="70" style="vertical-align: middle; margin: 0 10px;">
+    <input type="number" id="thresholdNumber" min="0" max="100" value="70" style="width: 60px; vertical-align: middle;">
+    <span style="color: #555;">%</span>
+  </div>
+  <div class="dashboard-grid">
+    <div class="card" id="realtimeCard">
+      <h2>Real-Time Mic Volume</h2>
+      <div>Current dB Level:</div>
+      <div id="dbValue">-- dB</div>
+      <div>Normalized Volume: <span id="normalizedValue">--</span>%</div>
+      <div id="warning" style="color: red; font-weight: bold; display: none; font-size: 1.5rem;">
+        🚨 Loud noise detected!
+      </div>
+      <button id="deleteLogsBtn">🗑️ Delete All Logs</button>
+      <div id="deleteStatus" style="margin-top: 10px; color: green;"></div>
+    </div>
+    <div class="card" id="currentStatusCard">
+      <h2>Current Status</h2>
+      <div id="currentStatus">--</div>
+      <div id="currentStatusDuration">--</div>
+    </div>
+    <div class="card" id="peakValueCard">
+      <h2>Peak Value</h2>
+      <div>Today: <span id="peakToday">--</span></div>
+      <div>Yesterday: <span id="peakYesterday">--</span></div>
+      <div>This Week: <span id="peakWeek">--</span></div>
+    </div>
+    <div class="card" id="frequencyCard">
+      <h2>Frequency of Occurrence</h2>
+      <div>Today: <span id="freqToday">--</span></div>
+      <div>Yesterday: <span id="freqYesterday">--</span></div>
+      <div>This Week: <span id="freqWeek">--</span></div>
+    </div>
+    <div class="card" id="timeCard">
+      <h2>Time (Normal/Noisy)</h2>
+      <div>Normal: <span id="timeNormal">--</span></div>
+      <div>Noisy: <span id="timeNoisy">--</span></div>
+    </div>
+    <div class="card" id="lastNoiseCard">
+      <h2>Last Noise Event</h2>
+      <div>Time: <span id="lastNoiseTime">--</span></div>
+      <div>Duration: <span id="lastNoiseDuration">--</span></div>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html> 

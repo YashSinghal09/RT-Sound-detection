@@ -1,0 +1,191 @@
+/* Modern, professional, and visually appealing styles for all frontend pages */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  color: #222;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #2a4365;
+  text-shadow: 0 2px 8px #e0e7ef;
+}
+
+/* Card-like containers */
+#dbValue, #normalizedValue, #warning, #deleteStatus, canvas, .card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08);
+  padding: 1.5rem 2.5rem;
+  margin: 1rem auto;
+  display: inline-block;
+}
+
+#dbValue {
+  font-size: 3.5rem;
+  color: #38b000;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+#normalizedValue {
+  font-size: 1.5rem;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+#warning {
+  color: #e63946;
+  background: #fff0f3;
+  border: 1px solid #e63946;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: none;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(230,57,70,0.08);
+}
+
+#deleteLogsBtn, button {
+  background: linear-gradient(90deg, #0077b6 0%, #38b000 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.10);
+  transition: background 0.2s, transform 0.2s;
+}
+
+#deleteLogsBtn:hover, button:hover {
+  background: linear-gradient(90deg, #38b000 0%, #0077b6 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+#deleteStatus {
+  color: #38b000;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+canvas {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08);
+  margin: 2rem auto 1rem auto;
+  display: block;
+  max-width: 90vw;
+  height: 400px !important;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 160px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.16);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #0077b6;
+  font-size: 1.3rem;
+}
+
+.dashboard-nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem 0;
+  background: #f8fafc;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.06);
+}
+.nav-link {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 1.5rem;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.nav-link:last-child {
+  margin-right: 0;
+}
+.nav-link:hover {
+  color: #38b000;
+}
+.logout-btn {
+  background: linear-gradient(90deg, #e63946 0%, #f4b400 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.10);
+  transition: background 0.2s, transform 0.2s;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, #f4b400 0%, #e63946 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+  #dbValue, #normalizedValue, #warning, #deleteStatus, canvas, .card {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  canvas {
+    height: 220px !important;
+  }
+  #deleteLogsBtn, button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+} 

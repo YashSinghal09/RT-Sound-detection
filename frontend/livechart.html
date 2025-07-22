@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Acoustic Dashboard</title>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="dashboard-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <div>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="livechart.html" class="nav-link">Live Chart</a>
+      <a href="graph.html" class="nav-link">Graph</a>
+    </div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
+  <h2>📈 Live Acoustic Analysis</h2>
+  <button onclick="resetAllZoom()">Reset Zoom</button>
+  <label for="startDate">Start Date:</label>
+  <input type="datetime-local" id="startDate">
+
+  <label for="endDate">End Date:</label>
+  <input type="datetime-local" id="endDate">
+
+  <button id="downloadCsvBtn">📥 Download CSV Report</button>
+
+
+
+  <canvas id="chartNormalized"></canvas>
+  <!-- <canvas id="chartRMS"></canvas> -->
+  <canvas id="chartFreq"></canvas>
+  <canvas id="chartFeature"></canvas>
+  <canvas id="chartAnomaly"></canvas>
+
+  <script src="livechart.js"></script>
+</body>
+</html>

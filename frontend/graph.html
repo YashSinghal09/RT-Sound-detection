@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Mic Graph</title>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="dashboard-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <div>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="livechart.html" class="nav-link">Live Chart</a>
+      <a href="graph.html" class="nav-link">Graph</a>
+    </div>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </nav>
+  <h1>Live Microphone Volume</h1>
+  <canvas id="volumeChart"></canvas>
+  <script src="graph.js"></script>
+</body>
+</html>

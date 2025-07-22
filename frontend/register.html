@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Sound Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" id="registerUsername" placeholder="Username" required autocomplete="username"><br>
+      <input type="password" id="registerPassword" placeholder="Password" required autocomplete="new-password"><br>
+      <input type="checkbox" id="registerAsAdmin" style="margin-top: 10px;"> <label for="registerAsAdmin">Register as admin</label><br>
+      <button type="submit">Register</button>
+    </form>
+    <div id="registerError" class="auth-error"></div>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+  <script src="register.js"></script>
+</body>
+</html> 

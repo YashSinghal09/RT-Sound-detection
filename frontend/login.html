@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Sound Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Username" required autocomplete="username"><br>
+      <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password"><br>
+      <input type="checkbox" id="loginAsAdmin" style="margin-top: 10px;"> <label for="loginAsAdmin">Login as admin</label><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginError" class="auth-error"></div>
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html> 
