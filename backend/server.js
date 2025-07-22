@@ -14,7 +14,7 @@ const alertAudio = require('./models/alertAudio'); // create this model if not y
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
-const JWT_SECRET = process.env.JWT_SECRET || 'changeme_secret';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Route imports
 const authRoutes = require('./routes/auth');
