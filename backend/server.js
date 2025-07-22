@@ -64,6 +64,10 @@ app.use(express.json());
 // Serve frontend files
 app.use(express.static(path.join(__dirname, '../frontend')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 // --- Socket.io Connection ---
 io.on('connection', (socket) => {
   console.log('🟢 A client connected');
