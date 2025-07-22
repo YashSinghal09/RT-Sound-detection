@@ -118,6 +118,7 @@ while (chart.data.labels.length && chart.data.labels[0] < oneMinuteAgo) {
     const endDate = new Date(endInput).toISOString();
 
     // Redirect to download CSV
+    //authFetch(`/api/generate-report?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`).catch(console.error);
     window.location.href = `/api/generate-report?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
   });
 

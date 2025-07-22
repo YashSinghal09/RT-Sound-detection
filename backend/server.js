@@ -96,7 +96,7 @@ function authMiddleware(req, res, next) {
 }
 
 // Protect all API routes except login/register and static files
-const openRoutes = ['/api/login', '/api/register'];
+const openRoutes = ['/api/login', '/api/register','/api/generate-report'];
 app.use((req, res, next) => {
   if (
     req.method === 'GET' && req.path.startsWith('/api/') && !openRoutes.includes(req.path)
